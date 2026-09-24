@@ -34,7 +34,7 @@ func (app *application) showWordHandler(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 
-	err = app.writeJson(w, http.StatusOK, data, nil)
+	err = app.writeJson(w, http.StatusOK, envelope{"words:": data}, nil)
 
 	if err != nil {
 		app.logger.Println(err)
